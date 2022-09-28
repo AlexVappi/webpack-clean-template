@@ -1,0 +1,25 @@
+$listOfNames: (
+    'Roboto': ('Thin': 200, 'Light': 300, 'Regular': 400, 'Medium': 500, 'Bold': 600, 'Black': 700),
+    'FiraSans': ('ExtraLight': 100, 'Thin': 200, 'Light': 300, 'Regular': 400, 'Medium': 500, 'Bold': 600, 'ExtraBold': 700)
+);
+
+@each $name,
+$weights in $listOfNames {
+
+    @each $suffix,
+    $val in $weights {
+        $path: '../fonts/#{$name}/#{$name}-#{$suffix}';
+
+        @font-face {
+            font-family: $name;
+            font-weight: $val;
+            font-style: normal;
+            font-display: swap;
+            src: local('#{$name} #{$suffix}'),
+            url('#{$path}.woff2') format('woff2'),
+            url('#{$path}.woff') format('woff'),
+            url('#{$path}.ttf') format('truetype'),
+            url('#{$path}.eot?#iefix') format('embedded-opentype');
+        }
+    }
+}
