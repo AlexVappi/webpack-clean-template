@@ -1,0 +1,16 @@
+
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="svg-icon icon-" + name + ' ' + mod)
+		use(xlink:href="./sprite.svg#sprite-" + name)
+
+mixin folder(name)
+	.tree-item
+		.tree-icon.tree-folder__icon
+		span.tree-item__name #{name}
+	.tree-folder__btn.js-folder-trigger
+
+mixin file(name)
+	li.tree-item
+		.tree-icon
+		span.tree-item__name #{name}

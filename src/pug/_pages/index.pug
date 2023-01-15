@@ -1,0 +1,26 @@
+extends ../layouts/layout
+
+block variables
+	-var description = '';
+
+
+block title
+	title Title
+block description
+	meta(name="description", content=description)
+
+prepend css
+
+block header
+
+prepend body
+
+block content
+	.container
+		h1 Hello Webpack
+		img(src="./images/1.png")
+
+
+block footer
+
+block scripts
